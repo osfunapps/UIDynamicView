@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UIDynamicView_Example' do
+  pod 'UIDynamicView', :path => '../'
+
+  target 'UIDynamicView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

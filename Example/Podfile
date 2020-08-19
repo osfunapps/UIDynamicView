@@ -2,7 +2,9 @@ use_frameworks!
 
 target 'UIDynamicView_Example' do
   pod 'UIDynamicView', :path => '../'
-
+  pod 'OsTools', '~> 0.3.5'
+  pod 'youtube-ios-player-helper', '~> 0.1.4'
+  
   target 'UIDynamicView_Tests' do
     inherit! :search_paths
 

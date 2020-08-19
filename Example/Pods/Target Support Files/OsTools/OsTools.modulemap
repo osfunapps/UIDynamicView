@@ -1,0 +1,6 @@
+framework module OsTools {
+  umbrella header "OsTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "UIDynamicView",
+  "version": "0.1.0",
+  "summary": "Build dynamic views FAST",
+  "description": "\"Use this library if you want to create views FAST without creating a pesky .xib file for every single view.\"",
+  "dependencies": {
+    "OsTools": [
+      "~> 0.3.5"
+    ],
+    "youtube-ios-player-helper": [
+      "~> 0.1.4"
+    ]
+  },
+  "swift_versions": "5.0",
+  "homepage": "https://github.com/osfunapps/UIDynamicView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "osfunapps": "osfunapps@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/osfunapps/UIDynamicView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "src/**",
+  "resources": "src/Views/*.xib",
+  "subspecs": [
+    {
+      "name": "Classes",
+      "source_files": "src/Classes/*"
+    },
+    {
+      "name": "Views",
+      "source_files": "src/Views/*.{swift}"
+    }
+  ],
+  "swift_version": "5.0"
+}

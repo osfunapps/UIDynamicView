@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIDynamicView'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Build dynamic views FAST'
 
 # This description is used to generate tags and improve search results.

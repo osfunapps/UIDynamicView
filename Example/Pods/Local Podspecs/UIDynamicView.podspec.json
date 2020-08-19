@@ -27,12 +27,11 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "src",
-  "resources": "src/Views/*.xib",
+  "resources": "src/*.xib",
   "subspecs": [
     {
       "name": "Classes",
-      "source_files": "src/Classes/*"
+      "source_files": "src/Classes/*.swift"
     },
     {
       "name": "Views",

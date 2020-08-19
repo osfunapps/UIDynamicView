@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3f33f2c-038f-42c7-80a8-728f11283aa7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Example/Podfile.lock" afterPath="$PROJECT_DIR$/Example/Podfile.lock" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Local Podspecs/UIDynamicView.podspec.json" afterPath="$PROJECT_DIR$/Example/Pods/Local Podspecs/UIDynamicView.podspec.json" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Example/Pods/Manifest.lock" />
       <change beforePath="$PROJECT_DIR$/UIDynamicView.podspec" afterPath="$PROJECT_DIR$/UIDynamicView.podspec" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/UIDialogWrapper.swift" afterPath="$PROJECT_DIR$/src/Classes/UIDialogWrapper.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +18,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="153">
-                <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+                <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -210,12 +206,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597824091606</updated>
-      <workItem from="1597824095004" duration="2592000" />
+      <workItem from="1597824095004" duration="2735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2592000" />
+    <option name="totallyTimeSpent" value="2735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1908" y="23" width="1920" height="1057" extended-state="0" />
@@ -264,7 +260,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="153">
-            <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
             <folding />
           </first_editor>
           <second_editor />

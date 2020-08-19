@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIDynamicView'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Build dynamic views FAST'
 
 # This description is used to generate tags and improve search results.
@@ -35,16 +35,16 @@ s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
   s.ios.deployment_target = '10.0'
 
-#  s.source_files = "UIDynamicView/src"
+#  s.source_files = "src/**.swift"
   
   s.subspec "Classes" do |ss|
-      ss.source_files = "src/Classes/*"
+      ss.source_files = "src/Classes/*.swift"
   end
-  
+
   s.subspec "Views" do |ss|
-      ss.source_files = "src/Views/*.{swift}"
+     ss.source_files = "src/Views/*.{swift}"
   end
   
   
-  s.resources = 'src/Views/*.xib'
+  s.resources = 'src/*.xib'
 end

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import youtube_ios_player_helper
-
 public class UIDialogWrapper {
     
     // views

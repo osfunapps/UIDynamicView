@@ -35,7 +35,7 @@ s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = "src/**"
+  s.source_files = "UIDynamicView/src"
   
   s.subspec "Classes" do |ss|
       ss.source_files = "src/Classes/*"

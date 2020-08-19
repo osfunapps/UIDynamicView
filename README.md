@@ -6,9 +6,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/UIDynamicView.svg?style=flat)](https://cocoapods.org/pods/UIDynamicView)
 
 
-![1](../res/1.gif) 
-![2](../res/2.gif)
-![3](../res/3.png)
+![1](./res/1.gif) 
+![2](./res/2.gif)
+![3](./res/3.png)
 
 ## Introduction
 Use this library if you want to create views FAST without creating a pesky .xib file for every single view.

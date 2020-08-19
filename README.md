@@ -18,6 +18,9 @@ Use this library if you want to create views FAST without creating a pesky .xib 
 Just create the dynamic view and add the subviews you would like to use.
 
  ```
+ 
+import UIDynamicView
+ 
 private func popFactsDialog() {
       
     // build the dynamic view with all of the props
@@ -77,6 +80,9 @@ private func popFactsDialog() {
 OR another example:
 
  ```
+ 
+import UIDynamicView
+ 
 private func popHelpDialog() {
         
     // build the dynamic view with all of the props
@@ -123,6 +129,8 @@ private func popHelpDialog() {
 
 You can also use the dialog wrapper for a faster dialog buildup (the Controller Connection example)
  ```
+ 
+import UIDynamicView
 private var dialogWrapper: UIDialogWrapper!
     
     private func popDialog() {

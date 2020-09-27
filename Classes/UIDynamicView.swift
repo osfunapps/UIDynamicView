@@ -130,6 +130,7 @@ public class UIDynamicView: UIView {
                 it.isActive = false
             }
         }
+        
         view.pinToParentHorizontally(constant: padding)
         view.refreshLayout()
     }
@@ -156,10 +157,24 @@ public class UIDynamicView: UIView {
             viewsContainerWidthConstr.isActive = true
         }
         viewsContainerHeightConstr.isActive = false
-        currViewsContainerHeight += view.frame.height + spaceBetweenViews
+        
+        var heightToAppend = view.frame.height
+        if let tv = view as? UITextView {
+            heightToAppend = setAndGetUITextViewHeight(tv)
+        }
+        
+        currViewsContainerHeight += heightToAppend + spaceBetweenViews
         viewsContainerHeightConstr = viewsContainer.heightAnchor.constraint(equalToConstant: currViewsContainerHeight)
         viewsContainerHeightConstr.isActive = true
         return horizontalLocationSet
+    }
+    
+    /// Will return and set the uitextview height by it's width and content
+    private func setAndGetUITextViewHeight(_ tv: UITextView) -> CGFloat {
+        let sizeToFitIn = CGSize(width: tv.frame.width, height: CGFloat(MAXFLOAT))
+        let newSize = tv.sizeThatFits(sizeToFitIn)
+        tv.heightAnchor.constraint(equalToConstant: newSize.height).isActive = true
+        return newSize.height
     }
     
     /// Will append a UILabel
@@ -188,6 +203,33 @@ public class UIDynamicView: UIView {
         return label
     }
     
+    /// Will append a UITextView
+    ///
+    /// - Parameter initialProps: The UITextView initial props
+    /// - Parameter invalidate: Set to true if you want to add the view to the parent
+    @discardableResult
+    public func addView(initialProps: InitialUITextViewProps, invalidate: Bool = true) -> UITextView {
+        let view = UITextView()
+        view.tag = initialProps.tag
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        // line spacing
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineHeightMultiple = initialProps.lineHeightMultiply
+//        var attributes = [NSAttributedString.Key: Any]()
+//        attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+//        view.attributedText = NSAttributedString(string: initialProps.text, attributes: attributes)
+        view.text = initialProps.text
+        view.textColor = UIColor.black
+        view.isEditable = initialProps.isEditable
+        view.font = initialProps.font
+        view.sizeToFit()
+        if invalidate {
+            beginViewAddProcedure(view, [initialProps.textAlignment])
+        }
+        return view
+    }
+    
     
     /// Will append a UIButton
     ///
@@ -200,7 +242,8 @@ public class UIDynamicView: UIView {
         button.tag = initialProps.tag
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setAllStatesTitle(initialProps.labelText)
-        button.addTarget(nil, action: initialProps.tapSelector, for: .touchUpInside)
+        button.addTarget(initialProps.tapTarget, action: initialProps.tapSelector, for: .touchUpInside)
+        button.titleLabel!.font = initialProps.font
         button.titleLabel!.sizeToFit()
         button.sizeToFit()
         if invalidate {
@@ -306,6 +349,8 @@ public class UIDynamicView: UIView {
             switch it.getType() {
             case .label:
                 viewList.append(addView(initialProps: it as! InitialLabelProps, invalidate: false))
+            case .textView:
+                viewList.append(addView(initialProps: it as! InitialUITextViewProps, invalidate: false))
             case .textField:
                 viewList.append(addView(initialProps: it as! InitialUITextFieldProps, invalidate: false))
             case .imageView:
@@ -380,6 +425,7 @@ public class UIDynamicView: UIView {
         } else {
             view.pinToParentTop(constant: padding)
         }
+        
         latestViewAdded = view
     }
     

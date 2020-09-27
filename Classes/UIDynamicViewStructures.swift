@@ -37,6 +37,35 @@ public struct InitialLabelProps: InitialProps {
     }
 }
 
+/// Will create a struct containing the initial props for a UITextView
+public struct InitialUITextViewProps: InitialProps {
+    
+    var text: String
+    var textAlignment: UIViewAlignment
+    var tag: Int
+    var font: UIFont
+    var lineHeightMultiply: CGFloat
+    var isEditable: Bool
+    
+    public init(text: String,
+                textAlignment: UIViewAlignment = .center,
+                tag: Int = 0,
+                font: UIFont = UIFont.systemFont(ofSize: 17),
+                lineHeightMultiply: CGFloat = 1.25,
+                isEditable: Bool = false) {
+        self.text = text
+        self.textAlignment = textAlignment
+        self.tag = tag
+        self.font = font
+        self.lineHeightMultiply = lineHeightMultiply
+        self.isEditable = isEditable
+    }
+    public func getType() -> UIViewType {
+        return .textView
+    }
+}
+
+
 /// Will create a struct containing the initial props for a UITextField
 public struct InitialUITextFieldProps: InitialProps {
     
@@ -71,6 +100,8 @@ public struct InitialUITextFieldProps: InitialProps {
         return .textField
     }
 }
+
+
 
 /// Will create a struct containing the initial props for a UIImageView
 public struct InitialUIImageViewProps: InitialProps {
@@ -126,16 +157,22 @@ public struct InitialButtonProps: InitialProps {
     var labelText: String
     var alignment: UIViewAlignment
     var tapSelector: Selector
+    var tapTarget: Any?
+    var font: UIFont
     var tag: Int
     
     public init(labelText: String,
                 alignment: UIViewAlignment = .center,
                 tapSelector: Selector,
+                tapTarget: Any? = nil,
+                font: UIFont = UIFont.systemFont(ofSize: 15),
                 tag: Int = 0) {
         self.labelText = labelText
         self.alignment = alignment
         self.tapSelector = tapSelector
+        self.tapTarget = tapTarget
         self.tag = tag
+        self.font = font
     }
     
     public func getType() -> UIViewType {
@@ -184,6 +221,7 @@ public enum UIViewType {
     case youtubeVideo
     case button
     case stackView
+    case textView
 }
 
 public enum UIViewAlignment {

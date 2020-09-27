@@ -25,44 +25,63 @@ class ViewController: UIViewController {
     
     private func popHelpDialog() {
         
-        // build the dynamic view with all of the props
-        dv = UIDynamicView()
-        dv.prepareView(parentView: view,
-                       padding: 14,
-                       margin: 14,
-                       maxWidthPercentFromParent: 0.65)
-        dv.dropShadow(shadowRadius: 5.0)
         
-        // add the title
-        let topTitleProps = InitialLabelProps(text: "Help",
-                                              textAlignment: .center,
-                                              font: UIFont.systemFont(ofSize: 20, weight: .bold))
-        dv.addView(initialProps: topTitleProps)
-
-        // add the description
-        let descriptionProps =  InitialLabelProps(text:
-            """
-            Please watch the below video to understand how to use the app
-            """,
-            textAlignment: .left,
-            font: UIFont.systemFont(ofSize: 19)
-        )
-        dv.addView(initialProps: descriptionProps)
-
-        // add the youtube video
-        let videoProps = InitialYoutubeVideoProps(videoId: "BywDOO99Ia0",
-                                                  widthPercentFromParent: 0.75,
-                                                  alignment: .center)
-        dv.addView(initialProps: videoProps)
+        // prepare the dialog
+        let dialogWrapper = UIDialogWrapper(parentView: view, margin: 20, maxWidthPercentFromParent: 0.85)
         
-        // add the footer button
-        let okBtnProps = InitialButtonProps(labelText: "OK",
-        alignment: .right,
-        tapSelector: #selector(onOkBtnTap))
+        // set title and description
+        dialogWrapper.setTitle(text: "Turn on your TV", size: 18)
+        dialogWrapper.setTopDesription(text: """
+                   In the future, allow this TV to be turned on by the phone
+                   """, size: 16)
+        dialogWrapper.setFooter(leftBtnText: "Later",
+                                rightBtnText: "Allow",
+                                leftBtnTapSelector: #selector(onNiceTap),
+                                rightBtnTapSelector: #selector(onNextFactTap))
         
-        dv.addView(initialProps: okBtnProps)
-        dv.attachView(parentView: view)
+        // attach the view to it's parent
+        dialogWrapper.attachView(parentView: view)
+        
+//        // build the dynamic view with all of the props
+//        dv = UIDynamicView()
+//        dv.prepareView(parentView: view,
+//                       padding: 14,
+//                       margin: 14,
+//                       maxWidthPercentFromParent: 0.65)
+//        dv.dropShadow(shadowRadius: 5.0)
+//
+//        // add the title
+//        let topTitleProps = InitialLabelProps(text: "Help",
+//                                              textAlignment: .center,
+//                                              font: UIFont.systemFont(ofSize: 20, weight: .bold))
+//        dv.addView(initialProps: topTitleProps)
+//
+//        // add the description
+//        let descriptionProps =  InitialLabelProps(text:
+//            """
+//            Please watch the below video to understand how to use the app
+//            """,
+//            textAlignment: .left,
+//            font: UIFont.systemFont(ofSize: 19)
+//        )
+//        dv.addView(initialProps: descriptionProps)
+//
+//        // add the youtube video
+//        let videoProps = InitialYoutubeVideoProps(videoId: "BywDOO99Ia0",
+//                                                  widthPercentFromParent: 0.75,
+//                                                  alignment: .center)
+//        dv.addView(initialProps: videoProps)
+//
+//        // add the footer button
+//        let okBtnProps = InitialButtonProps(labelText: "OK",
+//        alignment: .right,
+//        tapSelector: #selector(onOkBtnTap))
+//
+//        dv.addView(initialProps: okBtnProps)
+//        dv.attachView(parentView: view)
     }
+    
+    
     
     
     private var dv: UIDynamicView!
@@ -117,9 +136,11 @@ class ViewController: UIViewController {
     }
     
     @objc func onNiceTap() {
+        print("nice!")
     }
     
     @objc func onNextFactTap() {
+        print("next!")
     }
     
     @objc func onOkBtnTap() {

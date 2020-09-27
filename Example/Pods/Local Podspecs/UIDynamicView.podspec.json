@@ -1,14 +1,17 @@
 {
   "name": "UIDynamicView",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "summary": "Build dynamic views FAST",
   "description": "\"Use this library if you want to create views FAST without creating a pesky .xib file for every single view.\"",
   "dependencies": {
     "OsTools": [
-      "~> 0.3.5"
+
     ],
     "youtube-ios-player-helper": [
-      "~> 0.1.4"
+
+    ],
+    "OsUIViews": [
+
     ]
   },
   "swift_versions": "5.0",
@@ -22,7 +25,7 @@
   },
   "source": {
     "git": "https://github.com/osfunapps/UIDynamicView.git",
-    "tag": "0.1.7"
+    "tag": "0.1.8"
   },
   "platforms": {
     "ios": "10.0"

@@ -22,8 +22,9 @@ Pod::Spec.new do |s|
 DESC
 
 # dependencies
-s.dependency 'OsTools', '~> 0.4.1'
-s.dependency 'youtube-ios-player-helper', '~> 0.1.4'
+s.dependency 'OsTools'
+s.dependency 'youtube-ios-player-helper'
+s.dependency 'OsUIViews'
 s.swift_versions = "5.0"
 
 s.homepage         = 'https://github.com/osfunapps/UIDynamicView'

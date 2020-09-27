@@ -10,6 +10,9 @@
 ![2](./res/2.gif)
 ![3](./res/3.png)
 
+# NOTICE
+This project is only a module from larger set of tools for iOS UIViews and thus, has been moved to [![https://github.com/osfunapps/OsUIViews-iOS](https://github.com/osfunapps/OsUIViews-iOS)]
+
 ## Introduction
 Use this library if you want to create views FAST without creating a pesky .xib file for every single view.
 

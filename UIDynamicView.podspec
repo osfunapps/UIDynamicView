@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIDynamicView'
-  s.version          = '0.1.6'
+  s.version          = '0.1.8'
   s.summary          = 'Build dynamic views FAST'
 
 # This description is used to generate tags and improve search results.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 DESC
 
 # dependencies
-s.dependency 'OsTools', '~> 0.3.5'
+s.dependency 'OsTools', '~> 0.4.1'
 s.dependency 'youtube-ios-player-helper', '~> 0.1.4'
 s.swift_versions = "5.0"
 

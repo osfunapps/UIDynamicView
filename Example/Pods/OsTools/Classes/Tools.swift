@@ -11,6 +11,11 @@ import UIKit
 
 public class Tools {
     
+    /// Will return the current time in seconds
+    public static func getCurrentSeconds() ->  TimeInterval {
+        return Date().timeIntervalSince1970
+    }
+    
     /// Will return the current time in Int64 format
     public static func getCurrentMillis() -> Int64 {
         return Int64(Date().timeIntervalSince1970 * 1000)
@@ -125,6 +130,19 @@ public class Tools {
             return nil
         }
     }
+    
+    /// Will check if a string is a legal MAC address
+    public static func isMACAddrLegal(_ addr: String) -> Bool {
+        let legal = matches(for: "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\\.[0-9a-fA-F]{4}\\.[0-9a-fA-F]{4})$", in: addr)
+        return !legal.isEmpty
+    }
+    
+    /// will change the title of the back button on a view controller with a navigation
+    public static func setBackButtonTitle(_ viewController: UIViewController, _ title: String) {
+        viewController.navigationController?.navigationBar.topItem?.title = title;
+    }
+    
+    
 }
 
 

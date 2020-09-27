@@ -1,6 +1,6 @@
 {
   "name": "UIDynamicView",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "Build dynamic views FAST",
   "description": "\"Use this library if you want to create views FAST without creating a pesky .xib file for every single view.\"",
   "dependencies": {
@@ -22,7 +22,7 @@
   },
   "source": {
     "git": "https://github.com/osfunapps/UIDynamicView.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "10.0"

@@ -1,6 +1,6 @@
 PODS:
-  - OsTools (0.3.5)
-  - UIDynamicView (0.1.6):
+  - OsTools (0.3.8)
+  - UIDynamicView (0.1.7):
     - OsTools (~> 0.3.5)
     - youtube-ios-player-helper (~> 0.1.4)
   - youtube-ios-player-helper (0.1.6)
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  OsTools: 221952121fa82aa64f84c7281b565266969e7974
-  UIDynamicView: bc19b9e158b6ec80046f621062d7ee3130dd69f5
+  OsTools: 3d65237c0b29cc4cf5b1714adddd8f3ec188ce4b
+  UIDynamicView: 6f2e0c36b4fa5a4689599478ddfec82ff887ac6e
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
 PODFILE CHECKSUM: 9cf4dc45822d537c1e624f1b7e5cabe954cb4792

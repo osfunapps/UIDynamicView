@@ -50,6 +50,11 @@ extension String
     {
         return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
+    
+    public func boolValueFromString() -> Bool {
+        return NSString(string: self).boolValue
+    }
+    
 }
 
 extension Array where Element: Equatable {
@@ -509,3 +514,44 @@ extension UITextField {
         inputAccessoryView = applyToolbar
     }
 }
+
+
+
+/// Will check if the keyboard present
+extension UIApplication {
+    /// Checks if view hierarchy of application contains `UIRemoteKeyboardWindow` if it does, keyboard is presented
+    public var isKeyboardPresented: Bool {
+        if let keyboardWindowClass = NSClassFromString("UIRemoteKeyboardWindow"),
+            self.windows.contains(where: { $0.isKind(of: keyboardWindowClass) }) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    public static func openAppSetting() {
+        if let url = URL(string:UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+}
+
+/// Will return the last index of a char
+extension String {
+    public func lastIndexOf(string: String) -> Int? {
+        guard let index = range(of: string, options: .backwards) else { return nil }
+        return self.distance(from: self.startIndex, to: index.lowerBound)
+    }
+}
+
+/// Will remove a prefix of a string
+extension String {
+    public mutating func removePrefix(_ prefix: String) {
+        guard self.hasPrefix(prefix) else { return }
+        self = String(self.dropFirst(prefix.count))
+    }
+}
+
+
